@@ -1,0 +1,52 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+<table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">Date</th>
+        <th scope="col">Router Model</th>
+        <th scope="col">Router Brand</th>
+        <th scope="col">Price</th>
+        <th scope="col">ACTION</th>
+        
+
+      </tr>
+    </thead>
+    <tbody>
+        {% for q in router_list %}
+        <tr>
+            <th scope="row">{{q.Date}}</th>
+            <td>{{q.user_name}}</td>
+            <td>{{q.user_id}}</td>
+            <td > {{q.User_Cardnumber}}</td>
+            <td > {{q.User_Card_status}}</td>
+            <td > {{q.User_Offerlis.offer}}</td>
+       
+
+
+
+            
+            {% if request.user.is_superuser%}
+
+            <td><a href=""><i class="fa fa-edit text-success" style="font-size: 25px; margin-right: 10px;"></i></a><a href=""><i class="fa fa-trash text-danger" style="font-size: 25px;"></i></a></td>
+          </tr>
+          {% else%}
+          <td><a href="#"><i class="fa fa-edit text-success" style="font-size: 25px; margin-right: 10px;"></i></a><a href="#"><i class="fa fa-trash text-danger" style="font-size: 25px;"></i></a></td>
+          {% endif %}
+
+
+      {% endfor %} 
+
+    </tbody>
+  </table>
+
+    
+
+
+
+{% endblock content %}
+    
+
+
