@@ -221,12 +221,6 @@ from .forms import *
 
 
 
-class router_lists(LoginRequiredMixin,ListView):
-    context_object_name = 'router_list'
-    model = pevcard
-    template_name= 'pevcad/pevlist.html'
-
-
 
 
 
@@ -238,4 +232,17 @@ class pev_caduplodde(LoginRequiredMixin,CreateView):
     model = pevcard
     template_name = 'pevcad/pevcadup.html'
 
+
+
+
+
+class router_lists(LoginRequiredMixin,ListView):
+    model = pevcard
+    template_name= 'pevcad/pevlist.html'
+    
+    def get_context_data(self, **kwargs):
+         context = super(router_lists, self).get_context_data(**kwargs)
+         context['router_list'] = pevcard.objects.all()
+         context['totallist'] = pevcard.objects.all().count()
+         return context
 
