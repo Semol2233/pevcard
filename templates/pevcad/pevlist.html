@@ -279,11 +279,11 @@
     <table class="table table-bordered">
         <thead>
           <tr>
-            <th scope="col">Date</th>
-            <th scope="col">User Name</th>
-            <th scope="col">User Id</th>
-            <th scope="col">Card Number</th>
-            <th scope="col">Card Status</th>
+            <th style="color: aliceblue;" scope="col">Date</th>
+            <th style="color: aliceblue;" scope="col">User Name</th>
+            <th style="color: aliceblue;" scope="col">User Id</th>
+            <th style="color: aliceblue;" scope="col">Card Number</th>
+            <th style="color: aliceblue;" scope="col">Card Status</th>
             
     
           </tr>
@@ -292,11 +292,11 @@
             {% for q in router_list %}
             <tr>
                 <th scope="row">{{q.Date}}</th>
-                <td>{{q.user_name}}</td>
-                <td>{{q.user_id}}</td>
-                <td > {{q.User_Cardnumber}}</td>
-                <td > {{q.User_Card_status}}</td>
-                <td > {{q.User_Offerlis.offer}}</td>
+                <td style="color: aliceblue;">{{q.user_name}}</td>
+                <td style="color: aliceblue;"> {{q.user_id}}</td>
+                <td style="color: aliceblue;"> {{q.User_Cardnumber}}</td>
+                <td style="color: aliceblue;" > {{q.User_Card_status}}</td>
+                <td  style="color: aliceblue;" > {{q.User_Offerlis.offer}}</td>
            
     
     
