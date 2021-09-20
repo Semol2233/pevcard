@@ -109,7 +109,7 @@ class e_overtime(models.Model):
         return self.e_name.enamesd
 
     def get_absolute_url(self):
-        return reverse('listover')
+        return reverse('up')
 
 
 
