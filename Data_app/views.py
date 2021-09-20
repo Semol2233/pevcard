@@ -251,7 +251,7 @@ class router_lists(LoginRequiredMixin,ListView):
 
 
 
-class over_timelistview(LoginRequiredMixin,ListView):
+class over_timelistview(ListView):
     model = e_overtime
     template_name= 'pevcad/overtime.html'
     

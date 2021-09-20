@@ -16,7 +16,7 @@ urlpatterns = [
      path('login/',LoginView.as_view(),name='login'),
      path('up/',pev_caduplodde.as_view(),name='up'),
      path('postovertime/',e_post_overtime.as_view(),name='up'),
-     path('listover/',over_timelistview.as_view(),name='listover'),
+     path('list/',over_timelistview.as_view(),name='listover'),
      path('upover/<int:pk>/',postupdate.as_view(),name='upovser'),
 
 
