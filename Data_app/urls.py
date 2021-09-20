@@ -15,6 +15,14 @@ urlpatterns = [
      path('logout/', LogoutView.as_view(), name='logout'),
      path('login/',LoginView.as_view(),name='login'),
      path('up/',pev_caduplodde.as_view(),name='up'),
+     path('postovertime/',e_post_overtime.as_view(),name='up'),
+     path('listover/',over_timelistview.as_view(),name='listover'),
+     path('upover/<int:pk>/',postupdate.as_view(),name='upovser'),
+
+
+
+
+     
 
     # path('add', postchannel.as_view(),name='fhdf'), 
     # path('cover', coverapi.as_view(),name='ee'),

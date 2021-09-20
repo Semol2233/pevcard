@@ -86,3 +86,30 @@ class pevcard(models.Model):
 
     def __str__(self):
         return self.user_name 
+
+    def get_absolute_url(self):
+        return reverse('homes')
+
+class ename(models.Model):
+    enamesd = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.enamesd 
+
+class e_overtime(models.Model):
+    over_timehour   = models.DateField()
+    over_hour_in    = models.TimeField()
+    over_hour_out   = models.TimeField(blank=True,null=True)
+    Date =  models.DateField(auto_now_add = True)
+    e_name = models.ForeignKey(ename,blank=True,on_delete=CASCADE)
+    description = models.TextField(blank=True)
+   
+
+    def __str__(self):
+        return self.e_name.enamesd
+
+    def get_absolute_url(self):
+        return reverse('listover')
+
+
+

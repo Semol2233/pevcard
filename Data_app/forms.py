@@ -34,14 +34,37 @@ class card_pev_form(forms.ModelForm):
         model = pevcard
         fields = ['user_name','user_id','User_Cardnumber','User_Card_status','User_Offerlist']
         widgets = {
-            'user_name':forms.TextInput(attrs={'class':'form-control','placeholder':'Channel Name'}),
-            'user_id':forms.TextInput(attrs={'class':'form-control'}),
-            'User_Cardnumber':forms.TextInput(attrs={'class':'form-control'}),
-            'User_Card_status': forms.CheckboxInput(attrs={'class': 'form-check-input'}),  
+            'user_name':forms.TextInput(attrs={'class':'form-control','placeholder':'User name'}),
+            'user_id':forms.TextInput(attrs={'class':'form-control','placeholder':'User Id'}),
+            'User_Cardnumber':forms.TextInput(attrs={'class':'form-control','placeholder':'User_Cardnumber'}),
+            'User_Card_status': forms.CheckboxInput(attrs={'class': 'form-check-input','placeholder':'User name'}),  
        
     
           }
 
 
+class DateIswwsnput(forms.DateInput):
+    input_type = 'date'
+
+class TimeInput(forms.TimeInput):
+    input_type = "time"
+
+class e_overtimeform(forms.ModelForm):
+    class Meta:
+        model = e_overtime
+        fields = ['over_timehour','over_hour_in','over_hour_out','e_name','description']
+        widgets = {
+            'over_timehour':DateIswwsnput(attrs={'class':'form-control','placeholder':'User Id'}),
+            'over_hour_in':TimeInput(attrs={'class':'form-control','placeholder':'User Id'}),
+            'over_hour_out':TimeInput(attrs={'class':'form-control','placeholder':'User Id'}),
+            'e_name':forms.Select(attrs={'class':'form-control','placeholder':'User Id'}),
+            'description':forms.Textarea(attrs={'class':'form-control','placeholder':'Any Query'}),
+         
+          }
 
 
+
+    def __init__(self,*args, **kwargs):
+        super(e_overtimeform,self).__init__(*args, **kwargs)
+        self.fields['e_name'].empty_label="Employ Name"
+     

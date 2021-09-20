@@ -246,3 +246,33 @@ class router_lists(LoginRequiredMixin,ListView):
          context['totallist'] = pevcard.objects.all().count()
          return context
 
+
+
+
+
+
+class over_timelistview(LoginRequiredMixin,ListView):
+    model = e_overtime
+    template_name= 'pevcad/overtime.html'
+    
+    def get_context_data(self, **kwargs):
+         context = super(over_timelistview, self).get_context_data(**kwargs)
+         context['overtime'] = e_overtime.objects.all()
+         return context
+
+
+
+class e_post_overtime(LoginRequiredMixin,CreateView):
+    form_class = e_overtimeform
+    model = e_overtime
+    template_name = 'pevcad/overtimeup.html'
+
+
+
+
+class postupdate(LoginRequiredMixin,UpdateView):
+    form_class = e_overtimeform
+    model = e_overtime
+    template_name = 'pevcad/overtimeup.html'
+
+
