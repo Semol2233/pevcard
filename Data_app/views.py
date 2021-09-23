@@ -257,7 +257,7 @@ class over_timelistview(ListView):
     
     def get_context_data(self, **kwargs):
          context = super(over_timelistview, self).get_context_data(**kwargs)
-         context['overtime'] = e_overtime.objects.all().order_by('-Date')
+         context['overtime'] = e_overtime.objects.all().order_by('-over_timehour')
          return context
 
 
