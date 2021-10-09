@@ -1,0 +1,115 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<img style="border-radius: 2%;" src="http://167.71.205.55/media/Cover_Img/Screenshot_169.png" class="img-fluid" alt="Responsive image">
+
+
+<div class="d-flex justify-content-start">
+  <div class="row centered">
+
+    <div class="col text-light">
+      <p>Total BDT</p>
+    </div>
+    <div class="col text-light dfcdd">
+      <h1 id="totalcost" style=" font-weight: bold;"  ></h1>
+    </div>
+  
+    </div>
+</div>
+
+<style>
+
+  .colors{
+
+    color: aliceblue;
+  }
+
+  .centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+</style>
+
+
+<script>
+
+  $(document).ready(function()
+  {
+         var cost;
+         var totalcost = 0;
+         $('td:nth-child(4)').each(function(){
+          cost = $(this).html();
+          totalcost+=parseInt(cost);
+            $('#totalcost').text(totalcost)
+
+         });
+  });
+</script>
+
+<table class="table table-bordered mt-5">
+    <thead>
+      <tr>
+        <th style="color: aliceblue;" scope="col">Date</th>
+        <th style="color: aliceblue;" scope="col">Office Time In</th>
+        <th style="color: aliceblue;" scope="col">Office Time Out</th>
+        <th style="color: aliceblue;" scope="col">Employ Name</th>
+        
+        
+
+        
+
+      </tr>
+    </thead>
+    <tbody>
+        {% for q in fulllist %}
+        <tr>
+          <th style="color: aliceblue;" scope="row">{{q.over_timehour}}</th>
+          <td style="color: aliceblue;">{{q.over_hour_in}}</td>
+          <td style="color: aliceblue;"> {{q.over_hour_out}}</td>
+          <td style="color: aliceblue;"> {{q.e_name}}</td>
+          <td  style="color: aliceblue;" > {{q.description}}</td>
+
+     
+
+         
+              
+
+            {% if request.user.is_superuser%}
+
+            <!-- <td class="colors"><a href="{% url 'up' q.id%}"><i class="fa fa-edit text-success" style="font-size: 25px; margin-right: 10px;"></i></a><a href="{% url 'del' q.id%}"><i class="fa fa-trash text-danger" style="font-size: 25px;"></i></a></td> -->
+          </tr>
+          {% else%}
+          <td class="colors"><a href="#"><i class="fa fa-edit text-success" style="font-size: 25px; margin-right: 10px;"></i></a><a href="#"><i class="fa fa-trash text-danger" style="font-size: 25px;"></i></a></td>
+          {% endif %}
+
+
+      {% endfor %} 
+      <script>
+
+        $(document).ready(function()
+        {
+               var cost;
+               var totalcost = 0;
+               $('td:nth-child(4)').each(function(){
+                cost = $(this).html();
+                totalcost+=parseInt(cost);
+                  $('#tosstalcost').text(totalcost)
+      
+               });
+        });
+      </script>
+      <tr>
+        <td class="colors" colspan="3">Total</td>
+        <td class="colors"  id="tosstalcost" colspan="10"></td>
+      </tr>
+    </tbody>
+   
+  </table>
+  
+{% endblock content %}
+    
+
+

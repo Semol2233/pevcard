@@ -19,6 +19,9 @@ urlpatterns = [
      path('list/',over_timelistview.as_view(),name='listover'),
      path('upover/<int:pk>/',postupdate.as_view(),name='upovser'),
 
+     path('Shadek',Shadek.as_view(),name='Shadek'),
+
+
 
 
 

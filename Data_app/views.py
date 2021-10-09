@@ -46,7 +46,7 @@ User = get_user_model()
 #end
 from django.views.generic import TemplateView,CreateView,ListView,DeleteView,DetailView,UpdateView
 
-
+from .date import datedata
 from django import forms
 #list view -> APi
 from rest_framework.parsers import MultiPartParser, FormParser, JSONParser
@@ -194,6 +194,32 @@ from .forms import *
 #     page_size = 20
 #     page_size_query_param = 'page_size'
 #     max_page_size = 100
+
+
+
+
+class Shadek(LoginRequiredMixin,ListView):
+    context_object_name = 'fulllist'
+    model = e_overtime
+    template_name= 'query/query.html'
+    queryset = e_overtime.objects.filter(e_name__enamesd__contains='Shadek',over_timehour__range=datedata)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 # class playerpagedata(generics.ListAPIView):
