@@ -215,6 +215,45 @@ class ridon(LoginRequiredMixin,ListView):
 
 
 
+class Yeasin(LoginRequiredMixin,ListView):
+    context_object_name = 'fulllist'
+    model = e_overtime
+    template_name= 'query/query.html'
+    queryset = e_overtime.objects.filter(e_name__enamesd__contains='Yeasin',over_timehour__range=datedata).order_by('over_timehour')
+
+
+class Zia(LoginRequiredMixin,ListView):
+    context_object_name = 'fulllist'
+    model = e_overtime
+    template_name= 'query/query.html'
+    queryset = e_overtime.objects.filter(e_name__enamesd__contains='Zia',over_timehour__range=datedata).order_by('over_timehour')
+
+class Ridoy(LoginRequiredMixin,ListView):
+    context_object_name = 'fulllist'
+    model = e_overtime
+    template_name= 'query/query.html'
+    queryset = e_overtime.objects.filter(e_name__enamesd__contains='Ridoy',over_timehour__range=datedata).order_by('over_timehour')
+
+class Riyad_Driver(LoginRequiredMixin,ListView):
+    context_object_name = 'fulllist'
+    model = e_overtime
+    template_name= 'query/query.html'
+    queryset = e_overtime.objects.filter(e_name__enamesd__contains='Riyad_Driver',over_timehour__range=datedata).order_by('over_timehour')
+
+class Riyad(LoginRequiredMixin,ListView):
+    context_object_name = 'fulllist'
+    model = e_overtime
+    template_name= 'query/query.html'
+    queryset = e_overtime.objects.filter(e_name__enamesd__contains='Riyad',over_timehour__range=datedata).order_by('over_timehour')
+
+class Shakil(LoginRequiredMixin,ListView):
+    context_object_name = 'fulllist'
+    model = e_overtime
+    template_name= 'query/query.html'
+    queryset = e_overtime.objects.filter(e_name__enamesd__contains='Shakil',over_timehour__range=datedata).order_by('over_timehour')
+
+
+
 
 
 

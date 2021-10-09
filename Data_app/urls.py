@@ -18,8 +18,18 @@ urlpatterns = [
      path('postovertime/',e_post_overtime.as_view(),name='up'),
      path('list/',over_timelistview.as_view(),name='listover'),
      path('upover/<int:pk>/',postupdate.as_view(),name='upovser'),
+
+
      path('Shadek/',Shadek.as_view(),name='Shadek'),
      path('ridon/',ridon.as_view(),name='ridon'),
+     path('Yeasin/',Yeasin.as_view(),name='Yeasin'),
+     path('Zia/',Zia.as_view(),name='Zia'),
+     path('Ridoy/',Ridoy.as_view(),name='Ridoy'),
+     path('Riyad_Driver/',Riyad_Driver.as_view(),name='Riyad_Driver'),
+     path('Riyad/',Riyad.as_view(),name='Riyad'),
+     path('Shakil/',Shakil.as_view(),name='Shakil'),
+ 
+
 
 
 #fsvdfsvdfv
