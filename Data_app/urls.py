@@ -13,7 +13,16 @@ urlpatterns = [
     # path('d/<channel_slug>', ServiceDetailAPIView.as_view()),
      path('', router_lists.as_view(),name='homes'),
      path('logout/', LogoutView.as_view(), name='logout'),
- 
+     path('login/',LoginView.as_view(),name='login'),
+     path('up/',pev_caduplodde.as_view(),name='up'),
+     path('postovertime/',e_post_overtime.as_view(),name='up'),
+     path('list/',over_timelistview.as_view(),name='listover'),
+     path('upover/<int:pk>/',postupdate.as_view(),name='upovser'),
+     path('Shadek/',Shadek.as_view(),name='Shadek'),
+
+#fsvdfsvdfv
+
+
 
      
 
