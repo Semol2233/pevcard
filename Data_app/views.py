@@ -257,6 +257,9 @@ class Shakil(ListView):
          context = super(Shakil, self).get_context_data(**kwargs)
          context['fulllist'] = e_overtime.objects.filter(e_name__enamesd__contains='Shakil',over_timehour__range=datedata).order_by('over_timehour')
          context['count_working_days'] = e_overtime.objects.filter(e_name__enamesd__contains='Shakil',over_timehour__range=datedata).count()
+         context['count_worksing_days'] = e_overtime.objects.filter(e_name__enamesd__contains='Shakil',over_timehour__range=datedata).get()
+
+
          return context
 
 
