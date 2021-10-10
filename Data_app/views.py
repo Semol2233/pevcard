@@ -217,8 +217,8 @@ class ridon(ListView):
     
     def get_context_data(self, **kwargs):
          context = super(ridon, self).get_context_data(**kwargs)
-         context['fulllist'] = e_overtime.objects.filter(e_name__enamesd__exact='ridon',over_timehour__range=datedata).order_by('over_timehour')
-         context['count_working_days'] = e_overtime.objects.filter(e_name__enamesd__exact='ridon',over_timehour__range=datedata).count()
+         context['fulllist'] = e_overtime.objects.filter(e_name__enamesd__exact='Ridon',over_timehour__range=datedata).order_by('over_timehour')
+         context['count_working_days'] = e_overtime.objects.filter(e_name__enamesd__exact='Ridon',over_timehour__range=datedata).count()
          context['count_worksing_days'] = "Ridon"
 
 
