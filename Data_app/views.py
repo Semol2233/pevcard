@@ -217,8 +217,8 @@ class ridon(ListView):
     
     def get_context_data(self, **kwargs):
          context = super(ridon, self).get_context_data(**kwargs)
-         context['fulllist'] = e_overtime.objects.filter(e_name__enamesd__contains='ridon',over_timehour__range=datedata).order_by('over_timehour')
-         context['count_working_days'] = e_overtime.objects.filter(e_name__enamesd__contains='ridon',over_timehour__range=datedata).count()
+         context['fulllist'] = e_overtime.objects.filter(e_name__enamesd__exact='ridon',over_timehour__range=datedata).order_by('over_timehour')
+         context['count_working_days'] = e_overtime.objects.filter(e_name__enamesd__exact='ridon',over_timehour__range=datedata).count()
          context['count_worksing_days'] = "Ridon"
 
 
@@ -259,8 +259,8 @@ class Ridoy(ListView):
     
     def get_context_data(self, **kwargs):
          context = super(Ridoy, self).get_context_data(**kwargs)
-         context['fulllist'] = e_overtime.objects.filter(e_name__enamesd__contains='Ridoy',over_timehour__range=datedata).order_by('over_timehour')
-         context['count_working_days'] = e_overtime.objects.filter(e_name__enamesd__contains='Ridoy',over_timehour__range=datedata).count()
+         context['fulllist'] = e_overtime.objects.filter(e_name__enamesd__exact='Ridoy',over_timehour__range=datedata).order_by('over_timehour')
+         context['count_working_days'] = e_overtime.objects.filter(e_name__enamesd__exact='Ridoy',over_timehour__range=datedata).count()
          context['count_worksing_days'] = "Ridoy"
          return context
 
@@ -270,8 +270,8 @@ class Riyad_Driver(ListView):
     
     def get_context_data(self, **kwargs):
          context = super(Riyad_Driver, self).get_context_data(**kwargs)
-         context['fulllist'] = e_overtime.objects.filter(e_name__enamesd__contains='Riyad_Driver',over_timehour__range=datedata).order_by('over_timehour')
-         context['count_working_days'] = e_overtime.objects.filter(e_name__enamesd__contains='Riyad_Driver',over_timehour__range=datedata).count()
+         context['fulllist'] = e_overtime.objects.filter(e_name__enamesd__exact='Riyad_Driver',over_timehour__range=datedata).order_by('over_timehour')
+         context['count_working_days'] = e_overtime.objects.filter(e_name__enamesd__exact='Riyad_Driver',over_timehour__range=datedata).count()
          context['count_worksing_days'] = "Riyad_Driver"
 
          return context
@@ -284,8 +284,8 @@ class Riyad(ListView):
     
     def get_context_data(self, **kwargs):
          context = super(Riyad, self).get_context_data(**kwargs)
-         context['fulllist'] = e_overtime.objects.filter(e_name__enamesd__contains='Riyad',over_timehour__range=datedata).order_by('over_timehour')
-         context['count_working_days'] = e_overtime.objects.filter(e_name__enamesd__contains='Riyad',over_timehour__range=datedata).count()
+         context['fulllist'] = e_overtime.objects.filter(e_name__enamesd__exact='Riyad',over_timehour__range=datedata).order_by('over_timehour')
+         context['count_working_days'] = e_overtime.objects.filter(e_name__enamesd__exact='Riyad',over_timehour__range=datedata).count()
          context['count_worksing_days'] = "Riyad"
 
          return context
