@@ -198,15 +198,6 @@ from .forms import *
 
 
 
-class Shadek(LoginRequiredMixin,ListView):
-    context_object_name = 'fulllist'
-    model = e_overtime
-    template_name= 'query/query.html'
-    queryset = e_overtime.objects.filter(e_name__enamesd__contains='Shadek',over_timehour__range=datedata).order_by('over_timehour')
-
-
-
-
 
 class Shadek(ListView):
     model = e_overtime
