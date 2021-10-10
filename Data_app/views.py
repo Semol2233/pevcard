@@ -246,16 +246,18 @@ class Riyad(LoginRequiredMixin,ListView):
     template_name= 'query/query.html'
     queryset = e_overtime.objects.filter(e_name__enamesd__contains='Riyad',over_timehour__range=datedata).order_by('over_timehour')
 
-class Shakil(LoginRequiredMixin,ListView):
-    context_object_name = 'fulllist'
+
+
+
+class Shakil(ListView):
     model = e_overtime
     template_name= 'query/query.html'
-    queryset = e_overtime.objects.filter(e_name__enamesd__contains='Shakil',over_timehour__range=datedata).order_by('over_timehour')
-
-
-
-
-
+    
+    def get_context_data(self, **kwargs):
+         context = super(Shakil, self).get_context_data(**kwargs)
+         context['fulllist'] = e_overtime.objects.filter(e_name__enamesd__contains='Shakil',over_timehour__range=datedata).order_by('over_timehour')
+         context['count_working_days'] = e_overtime.objects.filter(e_name__enamesd__contains='Shakil',over_timehour__range=datedata).count()
+         return context
 
 
 
