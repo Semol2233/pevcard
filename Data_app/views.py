@@ -207,46 +207,109 @@ class Shadek(LoginRequiredMixin,ListView):
 
 
 
-class ridon(LoginRequiredMixin,ListView):
-    context_object_name = 'fulllist'
+
+class Shadek(ListView):
     model = e_overtime
     template_name= 'query/query.html'
-    queryset = e_overtime.objects.filter(e_name__enamesd__contains='Ridon',over_timehour__range=datedata).order_by('over_timehour')
+    
+    def get_context_data(self, **kwargs):
+         context = super(Shakil, self).get_context_data(**kwargs)
+         context['fulllist'] = e_overtime.objects.filter(e_name__enamesd__contains='Shadek',over_timehour__range=datedata).order_by('over_timehour')
+         context['count_working_days'] = e_overtime.objects.filter(e_name__enamesd__contains='Shadek',over_timehour__range=datedata).count()
+         context['count_worksing_days'] = "Shadek"
 
 
 
-class Yeasin(LoginRequiredMixin,ListView):
-    context_object_name = 'fulllist'
+class ridon(ListView):
     model = e_overtime
     template_name= 'query/query.html'
-    queryset = e_overtime.objects.filter(e_name__enamesd__contains='Yeasin',over_timehour__range=datedata).order_by('over_timehour')
+    
+    def get_context_data(self, **kwargs):
+         context = super(ridon, self).get_context_data(**kwargs)
+         context['fulllist'] = e_overtime.objects.filter(e_name__enamesd__contains='ridon',over_timehour__range=datedata).order_by('over_timehour')
+         context['count_working_days'] = e_overtime.objects.filter(e_name__enamesd__contains='ridon',over_timehour__range=datedata).count()
+         context['count_worksing_days'] = "Ridon"
 
 
-class Zia(LoginRequiredMixin,ListView):
-    context_object_name = 'fulllist'
+
+
+
+
+class Yeasin(ListView):
     model = e_overtime
     template_name= 'query/query.html'
-    queryset = e_overtime.objects.filter(e_name__enamesd__contains='Zia',over_timehour__range=datedata).order_by('over_timehour')
+    
+    def get_context_data(self, **kwargs):
+         context = super(Yeasin, self).get_context_data(**kwargs)
+         context['fulllist'] = e_overtime.objects.filter(e_name__enamesd__contains='Yeasin',over_timehour__range=datedata).order_by('over_timehour')
+         context['count_working_days'] = e_overtime.objects.filter(e_name__enamesd__contains='Yeasin',over_timehour__range=datedata).count()
+         context['count_worksing_days'] = "Yeasin"
 
-class Ridoy(LoginRequiredMixin,ListView):
-    context_object_name = 'fulllist'
+
+
+class Zia(ListView):
     model = e_overtime
     template_name= 'query/query.html'
-    queryset = e_overtime.objects.filter(e_name__enamesd__contains='Ridoy',over_timehour__range=datedata).order_by('over_timehour')
+    
+    def get_context_data(self, **kwargs):
+         context = super(Zia, self).get_context_data(**kwargs)
+         context['fulllist'] = e_overtime.objects.filter(e_name__enamesd__contains='Zia',over_timehour__range=datedata).order_by('over_timehour')
+         context['count_working_days'] = e_overtime.objects.filter(e_name__enamesd__contains='Zia',over_timehour__range=datedata).count()
+         context['count_worksing_days'] = "Zia"
 
-class Riyad_Driver(LoginRequiredMixin,ListView):
-    context_object_name = 'fulllist'
+
+
+
+
+
+class Ridoy(ListView):
     model = e_overtime
     template_name= 'query/query.html'
-    queryset = e_overtime.objects.filter(e_name__enamesd__contains='Riyad_Driver',over_timehour__range=datedata).order_by('over_timehour')
+    
+    def get_context_data(self, **kwargs):
+         context = super(Ridoy, self).get_context_data(**kwargs)
+         context['fulllist'] = e_overtime.objects.filter(e_name__enamesd__contains='Ridoy',over_timehour__range=datedata).order_by('over_timehour')
+         context['count_working_days'] = e_overtime.objects.filter(e_name__enamesd__contains='Ridoy',over_timehour__range=datedata).count()
+         context['count_worksing_days'] = "Ridoy"
 
-class Riyad(LoginRequiredMixin,ListView):
-    context_object_name = 'fulllist'
+
+class Riyad_Driver(ListView):
     model = e_overtime
     template_name= 'query/query.html'
-    queryset = e_overtime.objects.filter(e_name__enamesd__contains='Riyad',over_timehour__range=datedata).order_by('over_timehour')
+    
+    def get_context_data(self, **kwargs):
+         context = super(Riyad_Driver, self).get_context_data(**kwargs)
+         context['fulllist'] = e_overtime.objects.filter(e_name__enamesd__contains='Riyad_Driver',over_timehour__range=datedata).order_by('over_timehour')
+         context['count_working_days'] = e_overtime.objects.filter(e_name__enamesd__contains='Riyad_Driver',over_timehour__range=datedata).count()
+         context['count_worksing_days'] = "Riyad_Driver"
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+class Riyad(ListView):
+    model = e_overtime
+    template_name= 'query/query.html'
+    
+    def get_context_data(self, **kwargs):
+         context = super(Riyad, self).get_context_data(**kwargs)
+         context['fulllist'] = e_overtime.objects.filter(e_name__enamesd__contains='Riyad',over_timehour__range=datedata).order_by('over_timehour')
+         context['count_working_days'] = e_overtime.objects.filter(e_name__enamesd__contains='Riyad',over_timehour__range=datedata).count()
+         context['count_worksing_days'] = "Riyad"
+
+
+         return context
 
 
 class Shakil(ListView):
