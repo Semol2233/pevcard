@@ -209,7 +209,7 @@ class Shadek(ListView):
          context['count_working_days'] = e_overtime.objects.filter(e_name__enamesd__contains='Shadek',over_timehour__range=datedata).count()
          context['count_worksing_days'] = "Shadek"
 
-
+         return context
 
 class ridon(ListView):
     model = e_overtime
@@ -222,7 +222,7 @@ class ridon(ListView):
          context['count_worksing_days'] = "Ridon"
 
 
-
+         return context
 
 
 
@@ -236,7 +236,7 @@ class Yeasin(ListView):
          context['count_working_days'] = e_overtime.objects.filter(e_name__enamesd__contains='Yeasin',over_timehour__range=datedata).count()
          context['count_worksing_days'] = "Yeasin"
 
-
+         return context
 
 class Zia(ListView):
     model = e_overtime
@@ -249,7 +249,7 @@ class Zia(ListView):
          context['count_worksing_days'] = "Zia"
 
 
-
+         return context
 
 
 
@@ -262,7 +262,7 @@ class Ridoy(ListView):
          context['fulllist'] = e_overtime.objects.filter(e_name__enamesd__contains='Ridoy',over_timehour__range=datedata).order_by('over_timehour')
          context['count_working_days'] = e_overtime.objects.filter(e_name__enamesd__contains='Ridoy',over_timehour__range=datedata).count()
          context['count_worksing_days'] = "Ridoy"
-
+         return context
 
 class Riyad_Driver(ListView):
     model = e_overtime
@@ -274,18 +274,7 @@ class Riyad_Driver(ListView):
          context['count_working_days'] = e_overtime.objects.filter(e_name__enamesd__contains='Riyad_Driver',over_timehour__range=datedata).count()
          context['count_worksing_days'] = "Riyad_Driver"
 
-
-
-
-
-
-
-
-
-
-
-
-
+         return context
 
 
 
@@ -299,8 +288,10 @@ class Riyad(ListView):
          context['count_working_days'] = e_overtime.objects.filter(e_name__enamesd__contains='Riyad',over_timehour__range=datedata).count()
          context['count_worksing_days'] = "Riyad"
 
-
          return context
+
+
+
 
 
 class Shakil(ListView):
