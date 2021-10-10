@@ -213,7 +213,7 @@ class Shadek(ListView):
     template_name= 'query/query.html'
     
     def get_context_data(self, **kwargs):
-         context = super(Shakil, self).get_context_data(**kwargs)
+         context = super(Shadek, self).get_context_data(**kwargs)
          context['fulllist'] = e_overtime.objects.filter(e_name__enamesd__contains='Shadek',over_timehour__range=datedata).order_by('over_timehour')
          context['count_working_days'] = e_overtime.objects.filter(e_name__enamesd__contains='Shadek',over_timehour__range=datedata).count()
          context['count_worksing_days'] = "Shadek"
