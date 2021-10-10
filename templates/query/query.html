@@ -2,14 +2,32 @@
 
 {% block content %}
 
-<img style="border-radius: 2%;" src="http://167.71.205.55/media/Cover_Img/Screenshot_169.png" class="img-fluid" alt="Responsive image">
+<!-- <img style="border-radius: 2%;" src="http://167.71.205.55/media/Cover_Img/Screenshot_169.png" class="img-fluid" alt="Responsive image"> -->
 
 
 
-Preset - {{count_working_days}}
+<style>
+
+.maintxt {
+  background-image: url(http://167.71.205.55/media/Cover_Img/Screenshot_169.png);
+  background-size: cover;
+  height: 280px;
+}
+</style>
+<div class="container">
+  <div class="row">
+      <div class="col-centered">
+          <div class="maintxt">
+             <br>
+            <h5>Employ Name  - {{fulllist.e_name}}</h5>
+            <h5>Working Days - {{count_working_days}}</h5>
+     
 
 
-
+          </div>
+      </div>
+  </div>
+</div>
 
 <!-- 
 
